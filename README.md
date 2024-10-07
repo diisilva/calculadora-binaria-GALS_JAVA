@@ -22,7 +22,6 @@ O projeto está organizado da seguinte maneira:
     - `SyntacticError.java`
     - `Token.java`
 - **/target**: Pasta gerada pelo Maven que contém os arquivos compilados.
-- **/test/java**: Testes do código da calculadora.
 - **/GALS**: Inclui os arquivos relacionados ao GALS:
   - `calculadora_pronta.gals`: O código implementado na linguagem GALS.
   - `casos_teste_gals.txt`: Um arquivo de texto contendo os casos de teste utilizados para verificar a funcionalidade dentro do programa GALS, no simulador.
