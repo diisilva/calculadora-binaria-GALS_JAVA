@@ -1,0 +1,40 @@
+1. Aditição
+
+a = 101;   !* Atribuindo 101 à variável a *!
+b = 110;   !* Atribuindo 110 à variável b *!
+c = a + b; !* Somando a e b *!
+show(c);   !* Exibindo o resultado da soma *!
+
+2. Subtração
+
+x = 1000;  !* Atribuindo 1000 à variável x *!
+y = 11;    !* Atribuindo 11 à variável y *!
+z = x - y; !* Subtraindo y de x *!
+show(z);   !* Exibindo o resultado da subtração *!
+
+3. Multiplicação
+
+m = 101;   !* Atribuindo 101 à variável m *!
+n = 10;    !* Atribuindo 10 à variável n *!
+p = m * n; !* Multiplicando m por n *!
+show(p);   !* Exibindo o resultado da multiplicação *!
+
+4. Logaritmo
+
+val = 1000;  !* Atribuindo 1000 à variável val *!
+result = log(val); !* Calculando o logaritmo de val *!
+show(result); !* Exibindo o resultado do logaritmo *!
+
+5. Exponenciação
+
+base = 10;   !* Atribuindo 10 à variável base *!
+expoente = 3; !* Atribuindo 3 à variável expoente *!
+resultado = base A expoente; !* Elevando base à expoente *!
+show(resultado); !* Exibindo o resultado da exponenciação *!
+
+6. Aditição com Expressão Complexa
+
+a = 101;     !* Atribuindo 101 à variável a *!
+b = 110;     !* Atribuindo 110 à variável b *!
+resultado = (a + b) * 10; !* Somando a e b e multiplicando o resultado por 10 *!
+show(resultado);   !* Exibindo o resultado da expressão complexa *!

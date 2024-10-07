@@ -1,0 +1,124 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+ScannerCaseSensitive = true
+ScannerTable = Compact
+Input = String
+Parser = SLR
+#RegularDefinitions
+// Definições Regulares
+L: [a-zA-Z]
+N: [0-9]
+S: [_]
+// Definição de Comentários
+COMMENT_LINE :   "!*" [^ "*" ]* "*!"
+#Tokens
+// Símbolos
+">="
+"<="
+"=="
+"!="
+">"
+"<"
+"="
+
+"{"
+"}"
+";"
+","
+"("
+")"
+"["
+"]"
+"+"
+"-"
+"*"
+"/"
+"->"
+// Ignorar espaços em branco
+: [\s\t\n\r]+
+
+// Ignorar comentários (linha e bloco)
+:! {COMMENT_LINE}
+
+// Tokens para números e identificadores
+NUMERO: {N}+
+ID: {L}({L}|{N}|{S})*
+LITERAL: \"[^\"]*\"
+
+
+// Palavras reservadas como casos especiais
+A = ID : "A"               // Exponenciação
+log = ID : "log"           // Logaritmo
+show = ID : "show"         // Comando de exibição
+#NonTerminals
+<Programa>
+<comando>
+<atribuicao>
+<show>
+<expressao>
+<termo>
+<exponencial>
+<fator>
+<logaritmo>
+
+#Grammar
+// Definição do programa principal
+<Programa> ::=
+    <comando> ";" <Programa>
+  | <comando> ";"
+;
+
+// Comando geral: pode ser uma atribuição ou um comando show
+<comando> ::=
+    <atribuicao>
+  | <show>
+;
+
+// Atribuição de valores a variáveis (números binários ou expressões)
+<atribuicao> ::=
+    ID "=" <expressao>
+;
+
+// Comando para exibir o valor de uma variável
+<show> ::=
+    show "(" ID ")"
+;
+
+// Expressão pode ser uma soma ou subtração de termos
+<expressao> ::=
+    <termo> "+" <expressao>
+  | <termo> "-" <expressao>
+  | <termo>
+;
+
+// Termo pode ser uma multiplicação ou divisão de exponenciais
+<termo> ::=
+    <exponencial> "*" <termo>
+  | <exponencial> "/" <termo>
+  | <exponencial>
+;
+
+// Exponencial pode ser uma base elevada a uma potência
+<exponencial> ::=
+    <fator> A <fator>
+  | <fator>
+;
+
+// Fator pode ser uma variável, número, logaritmo ou uma expressão entre parênteses
+<fator> ::=
+    ID
+  | NUMERO
+  | "(" <expressao> ")"
+  | <logaritmo>
+;
+
+// Logaritmo pode ser aplicado a uma variável ou número
+<logaritmo> ::=
+    log "(" <fator> ")"
+;
+
