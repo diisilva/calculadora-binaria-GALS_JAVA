@@ -41,4 +41,4 @@ O projeto está organizado da seguinte maneira:
    git clone https://github.com/diisilva/calculadora-binaria-GALS_JAVA.git
 
 2. Abra a pasta do projeto no NetBeans IDE e faça os testes
-3. Temos video no Youtube, disponivel em <>.
+3. Temos video no Youtube, disponivel em <https://youtu.be/aOGgdh7VBlg>.
